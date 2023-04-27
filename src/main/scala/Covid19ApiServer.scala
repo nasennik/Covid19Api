@@ -16,7 +16,7 @@ import scala.language.postfixOps
 object Covid19ApiServer:
 
   private val service = new Covid19ApiService
-  private val httpApp = (Covid19Routes.covid19Routes(service) <+> Covid19Routes.maxMinRoutes(service)).orNotFound
+  private val httpApp = (Covid19Routes.countriesRoute(service) <+> Covid19Routes.maxMinRoutes(service)).orNotFound
   private val finalHttpApp = Logger.httpApp(true, true)(httpApp)
 
   def run: IO[Unit] = EmberServerBuilder

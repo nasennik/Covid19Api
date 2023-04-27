@@ -2,16 +2,19 @@ package com.dora
 package models
 
 import cats.effect.Concurrent
+import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}
 import io.circe.{Decoder, Encoder}
 import org.http4s.circe.{jsonEncoderOf, jsonOf}
 import org.http4s.{EntityDecoder, EntityEncoder}
 
 import java.time.ZonedDateTime
 
-case class MaxMinCases(country: String, maxCases: Int, minCases: Int, date: ZonedDateTime)
+case class MaxMinCases(country: String, maxCases: Int, dateMaxCases: ZonedDateTime, minCases: Int, dateMinCases: ZonedDateTime)
 
 object MaxMinCases:
-
+//
+//  implicit val encoder: Encoder[MaxMinCases] = deriveEncoder[MaxMinCases]
+//  implicit val decoder: Decoder[MaxMinCases] = deriveDecoder[MaxMinCases]
 
   given Decoder[MaxMinCases] = Decoder.derived[MaxMinCases]
 

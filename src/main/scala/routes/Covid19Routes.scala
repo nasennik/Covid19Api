@@ -49,7 +49,7 @@ private val logger =Slf4jLogger.getLogger[IO]
     case GET -> Root / "covid19"/ "maxMin" / "country" / country :?
       FromDateQueryParamMatcher(from) +& ToDateQueryParamMatcher(to)  =>
       for {
-        maxMinCases <- service.getMaxMinCases(country, from, to)
+        maxMinCases <-service.getMaxMinCases(country, from, to)
         resp <- Ok(maxMinCases)
       } yield resp
   }
