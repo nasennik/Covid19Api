@@ -1,0 +1,30 @@
+<head>
+  <title>Max and min cases</title>
+</head>
+<body>
+<h1>Covid19 Cases</h1>
+<br>
+
+
+<p>  Select country to find max and min cases:</p>
+
+<select class="form-select form-control" [(ngModel)]="selectedCountry">
+  <option *ngFor="let country of countryList" [value]="country">{{ country }}</option>
+</select>
+
+
+<label for="startDate">Start date:</label>
+<input type="date" id="startDate" [(ngModel)]="startDate">
+
+<label for="endDate">End date:</label>
+<input type="date" id="endDate" [(ngModel)]="endDate">
+
+<button class="btn btn-primary mt-3" (click)="getMaxMinCases()">Get Max Min cases</button>
+
+<p>Max cases for {{ selectedCountry }} from {{ startDate }} to {{ endDate }}:</p>
+<p>{{ maxCases }} on {{ dateMaxCases }}</p>
+<p>Min cases for {{ selectedCountry }} from {{ startDate }} to {{ endDate }}:</p>
+<p>{{ minCases }} on {{ dateMinCases }}</p>
+
+</body>
+

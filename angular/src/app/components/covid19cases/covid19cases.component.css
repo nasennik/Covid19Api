@@ -1,0 +1,28 @@
+/** { font-family: sans-serif !important; }*/
+
+.form-select {
+  max-width: 300px;
+}
+
+ body{
+   margin-left: 40px;
+ }
+
+ label{
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-left: 50px;
+ }
+select, input, button {
+  display: inline-block;
+  margin-right: 10px;
+}
+input[type="date"] {
+  width: 150px;
+}
+
+button{
+
+  margin-left: 20px;
+
+}
